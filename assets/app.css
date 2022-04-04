@@ -480,10 +480,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.bg-blue-50 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(239 246 255 / var(--tw-bg-opacity));
-}
 .uppercase {
   text-transform: uppercase;
 }
