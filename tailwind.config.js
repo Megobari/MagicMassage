@@ -1,4 +1,5 @@
 module.exports = {
+  prefix: 'x',
   content: [
     './config/*.json',
     './layout/*.liquid',
@@ -10,7 +11,15 @@ module.exports = {
     './templates/customers/*.liquid',
   ],
   theme: {
-    extend: {},
+    screens: {
+      'md': '750px',
+      'lg': '990px',
+    },
+    extend: {
+      fontFamily: {
+        'heading': 'var(--font-heading-family)'
+      },
+    },
   },
   plugins: [],
 }
