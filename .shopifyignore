@@ -1,1 +1,10 @@
 mix-manifest.json
+node_modules/*
+scripts/*
+styles/*
+.gitignore
+package.json
+postcss.config.js
+tailwind.config.js
+webpack.config.js
+yarn.lock
