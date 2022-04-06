@@ -560,4 +560,21 @@ Ensure the default browser behavior of the `hidden` attribute.
     padding-left: 32px;
     padding-right: 32px;
   }
+.tw-h-48 {
+  height: 192px;
+}
+.tw-bg-red-50 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 242 242 / var(--tw-bg-opacity));
+}
+.tw-bg-red-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
+}
+.tw-object-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.tw-p-5 {
+  padding: 20px;
 }
