@@ -541,6 +541,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(25 122 255 / var(--tw-bg-opacity));
 }
+.tw-bg-\[\#AECCFF\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(174 204 255 / var(--tw-bg-opacity));
+}
+.tw-bg-opacity-10 {
+  --tw-bg-opacity: 0.1;
+}
 .tw-px-1 {
   padding-left: 4px;
   padding-right: 4px;
@@ -584,6 +591,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .tw-text-center {
   text-align: center;
 }
+.tw-font-\[\'Mont\'\] {
+  font-family: 'Mont';
+}
 .tw-text-\[42px\] {
   font-size: 42px;
 }
@@ -613,6 +623,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .tw-text-\[12px\] {
   font-size: 12px;
+}
+.tw-text-\[11px\] {
+  font-size: 11px;
 }
 .tw-font-medium {
   font-weight: 500;
