@@ -1,0 +1,114 @@
+<div class="page-width">
+    <div class="tw-flex tw-items-center">
+        <h1 class="tw-text-[#11346f] tw-font-medium tw-text-md  tw-text-[30px] md:tw-text-[42px] tw-leading-[1em]">All-in-one massager that works like 
+            <span class="tw-flex lg:tw-inline tw-font-bold tw-text-[#197AFF] tw-relative magic-span after:-tw-scale-x-100 after:tw-rotate-180 xl:after:tw-rotate-0 xl:after:tw-scale-100">magic!</span>
+        </h1>
+        <img class="tw-block lg:tw-hidden" src="https://cdn.shopify.com/s/files/1/0637/9474/1504/files/3-min.png?v=1651492005"/>
+    </div>
+    <div class=" tw-grid tw-grid-cols-1 xl:tw-grid-cols-3 !tw-my-5">
+    <div class="tw-max-w-[100%] lg:tw-max-w-[90%] xl:tw-col-span-2 tw-flex tw-flex-col tw-gap-8">
+    <p class="tw-text-black tw-text-center tw-text-sm md:tw-text-lg tw-mt-8 lg:mt-0 lg:tw-text-left">
+      {{section.settings.desc}}
+    </p>
+    <div
+      class="tw-grid tw-grid-cols-4 md:tw-border tw-border-[#CEE2FF] tw-rounded-xl"
+    >
+      {%for advantage in section.blocks%}
+      <div
+        class="md:tw-border-r {%if forloop.index!=4%}tw-border-[#CEE2FF]{%endif%} tw-my-3 tw-px-1 tw-flex tw-gap-2 tw-flex-col tw-items-center tw-text-center tw-text-black tw-py-1"
+      >
+        <img src="{{advantage.settings.icon | img_url: '40x'}}" alt="">
+        <h3 class="tw-text-[16px] tw-text-[#11346F] tw-font-bold">{{advantage.settings.title}}</h3>
+        <p class="tw-text-[13px] tw-hidden lg:tw-block">{{advantage.settings.content}}</p>
+      </div>
+      {%endfor%}
+    </div>
+    <div class="tw-flex tw-flex-col tw-items-center lg:tw-items-start">
+      {%render "custom-button"%}
+      <img
+        class="tw-ml-2 tw-my-5"
+        src="https://cdn.shopify.com/s/files/1/0637/9474/1504/files/Payments.svg?v=1651478863"
+        alt=""
+      />
+    </div>
+  </div>
+  <div class="tw-hidden tw-justify-self-end lg:tw-flex tw-items-end xl:-tw-mt-10 tw-w-[500px] xl:-tw-mr-20">
+    <img
+      src="{{section.settings.img | img_url: 'master'}}"
+      alt=""
+    />
+  </div>
+  </div>
+</div>
+
+<style>
+    .magic-span::after{
+        content: url('https://cdn.shopify.com/s/files/1/0637/9474/1504/files/Arrow_4.svg?v=1651490018');
+        position: absolute;
+        left: 120%;
+    }
+    .magic-span::before {
+        content: url('https://cdn.shopify.com/s/files/1/0637/9474/1504/files/Vector_198_Stroke.svg?v=1651490027');
+        position: absolute;
+        /* border: 1px solid green; */
+        top: 0.5em;
+        left: -0.5em;
+    }
+    @media (max-width: 990px) {
+        .magic-span::after {
+            left: 4em;
+        }
+    }
+    @media (max-width: 450px) {
+        .magic-span::before {
+            content: url('https://cdn.shopify.com/s/files/1/0637/9474/1504/files/Vector_198_Stroke_1_54f850d4-d5c0-4584-bd4c-0d8fabe83506.svg?v=1651493911');
+            left: 0;
+        }
+    }
+</style>
+
+{% schema %}
+{
+    "name": "Home Product",
+    "settings": [
+        {
+            "id": "title",
+            "type": "text",
+            "label": "Title"
+        },
+        {
+            "id": "desc",
+            "type": "text",
+            "label": "Description"
+        },
+        {
+            "id": "img",
+            "type": "image_picker",
+            "label": "Image"
+        }
+    ],
+    "blocks": [
+        {
+            "name": "Advantages",
+            "type": "advantages",
+            "settings": [
+                {
+                    "id": "icon",
+                    "type": "image_picker",
+                    "label": "Icon"
+                },
+                {
+                    "id": "title",
+                    "type": "text",
+                    "label": "Title"
+                },
+                {
+                    "id": "content",
+                    "type": "text",
+                    "label": "Content"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}
