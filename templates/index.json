@@ -47,7 +47,11 @@
         "desc": "MagicMassage™ provides relief from head tensions, muscle aches, sleep irregularities and more - suitable for adults, kids, and pets!",
         "img": "shopify://shop_images/Group_4404-min.png"
       }
+    },
+    "features-sticky": {
+      "type": "features-sticky",
+      "settings": {}
     }
   },
-  "order": ["product"]
+  "order": ["product", "features-sticky"]
 }

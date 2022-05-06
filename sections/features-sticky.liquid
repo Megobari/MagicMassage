@@ -1,0 +1,110 @@
+<div class="tw-flex tw-flex-col lg:tw-flex-row tw-z-20 tw-relative" style="display: flex;height: auto;align-items: flex-start;">
+    <div class="tw-bg-[#11346F] tw-px-5 lg:tw-px-20 tw-py-5 md:tw-py-[10%] tw-relative lg:tw-sticky tw-top-0 tw-w-full lg:tw-w-2/4 md:tw-min-h-[100vh]">  
+        <h1 class="tw-text-white tw-text-center md:tw-text-left">MagicMassage™ <br class="tw-block md:tw-hidden"/>  <strong class="features">Features</strong></h1>
+        <div class="tw-my-14 tw-flex tw-flex-col tw-gap-9">
+            {%for feature in section.blocks%}
+                {%if feature.type == "feature" %}
+                <div class="tw-flex tw-gap-4">
+                    <img class="tw-w-20 tw-object-contain"  src="{{feature.settings.icon | img_url: 'master'}}" alt="" loading="lazy"/>
+                    <div class="tw-flex tw-flex-col tw-gap-2">
+                        <h3 class="tw-text-white tw-font-bold">{{feature.settings.title}}</h3>
+                        <p class="tw-text-white">{{feature.settings.desc}}</p>
+                    </div>
+                </div>
+                {%endif%}
+            {%endfor%}
+        </div>
+    </div>
+    <div class="tw-px-5 lg:tw-px-20 tw-bg-white tw-w-full lg:tw-w-2/4">
+        {%for videoFeature in section.blocks%}
+        {%if videoFeature.type == "video-feature" %}
+        <div class="tw-py-10 tw-flex-1 tw-flex tw-flex-col">
+            <h1 class="tw-text-blue-900 tw-font-bold">Life-Changing Massaging Device</h1>
+            <p class="tw-text-black">Enhance the natural regeneration of your body. With Next-Gen innovative movements, massage possibilities are endless!</p>
+            <video class="tw-rounded-3xl tw-mt-5" autoplay muted src="https://cdn.shopify.com/s/files/1/0566/1294/6104/files/1-1_e3539c04-1441-4bc0-af49-3c4eb3d604f5.mp4?v=1640684657"></video>
+            <div class="tw-flex tw-justify-center tw-mt-5">
+                {%render "custom-button"%}
+            </div>
+        </div>
+        {%endif%}
+        {%endfor%}
+    </div>
+</div>
+
+<style>
+    .features {
+        position: relative;
+    }
+    .features::after {
+        content: url("https://cdn.shopify.com/s/files/1/0637/9474/1504/files/Arrow_3.svg?v=1651838215");
+        position: absolute;
+        margin-left: -0.5em;
+    }
+    .features::before {
+        content: url("https://cdn.shopify.com/s/files/1/0637/9474/1504/files/Vector_198_Stroke_229ba593-6f5e-4edc-8fb6-922801594089.svg?v=1651837995");
+        position: absolute;
+        margin-top: 0.5em;
+    }
+    @media (max-width: 768px) {
+        .features::before {
+            margin-left: -0.7em;
+        }
+    }
+</style>
+
+{% schema %}
+{
+    "name": "Features",
+    "settings": [
+        {
+            "id": "title",
+            "type": "text",
+            "label": "Title"
+        }
+    ],
+    "blocks": [
+        {
+            "name": "Feature",
+            "type": "feature",
+            "settings": [
+                {
+                    "id": "title",
+                    "type": "text",
+                    "label": "Title"
+                },
+                {
+                    "id": "desc",
+                    "type": "text",
+                    "label": "Description"
+                },
+                {
+                    "id": "icon",
+                    "type": "image_picker",
+                    "label": "Icon"
+                }
+            ]
+        },
+        {
+            "name": "Video Feature",
+            "type": "video-feature",
+            "settings": [
+                {
+                    "id": "title",
+                    "type": "text",
+                    "label": "Title"
+                },
+                {
+                    "id": "desc",
+                    "type": "text",
+                    "label": "Description"
+                },
+                {
+                    "id": "show-btn",
+                    "type": "checkbox",
+                    "label": "Show Button"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}
