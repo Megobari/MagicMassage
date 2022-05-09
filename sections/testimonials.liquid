@@ -1,17 +1,23 @@
 <div class="page-width">
-    <h1 class="tw-text-center">Real Customers <br/><span class="">Real Stories</span></h1>
+    <h1 class="tw-text-center tw-text-[#11346F]">Real Customers <br/><span class="tw-font-bold tw-text-[#197AFF]">Real Stories</span></h1>
     <div
       style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
-      class="swiper mySwiper2"
+      class="swiper mySwiper2 tw-mt-5"
     >
       <div class="swiper-wrapper">
         {%for i in (1..5)%}
         {%for card in section.blocks%}
             <div class="swiper-slide tw-grid tw-grid-cols-2 tw-gap-20">
-               <div>
-                   <h3>{{card.settings.name}}</h3>
-                   <p>Problem: {{card.settings.problem}}</p>
-                   <p>{{card.settings.comment}}</p>
+               <div class="tw-self-center">
+                   <h3 class="tw-text-2xl tw-text-[#11346F] tw-font-bold tw-flex tw-gap-2">
+                       {{card.settings.name}}
+                       <span class="tw-text-[12px] tw-font-normal tw-uppercase tw-text-[#89C25F] tw-flex tw-items-center">
+                           <img src="https://cdn.shopify.com/s/files/1/0637/9474/1504/files/Vector.svg?v=1652120761"/>
+                           Verified buyer
+                        </span>
+                    </h3>
+                   <p class="tw-text-black">Problem: {{card.settings.problem}}</p>
+                   <p class="tw-mt-5">{{card.settings.comment}}</p>
                </div>
                <div>
                    <img src="{{card.settings.change-image | img_url: "master"}}"/>
@@ -24,14 +30,19 @@
       <div class="swiper-button-prev custom-nav-btn"></div>
     </div>
     <div thumbsSlider="" class="swiper mySwiper tw-mt-10">
-      <div class="swiper-wrapper">
+      <div class="swiper-wrapper" x-data="{showIndex: 1}">
         {%for i in (1..5)%}
             {%for card in section.blocks%}
-                <div class="swiper-slide tw-grid tw-grid-cols-3 tw-gap-2 tw-border tw-border-blue-300 tw-p-8 tw-rounded-2xl">
-                    <img src="{{card.settings.image | img_url: 'master'}}"/>
-                    <div class="tw-col-span-2">
-                        <h3>{{card.settings.name}}</h3>
-                        <p>Problem: {{card.settings.problem}}</p>
+                <div @click="showIndex = {{i}}" :class="{'tw-border-[#197AFF]': showIndex == {{i}}}" class="swiper-slide tw-grid tw-grid-cols-3 tw-gap-2 tw-border tw-border-blue-300 tw-p-4 tw-rounded-2xl">
+                    <img class="tw-self-center" src="{{card.settings.image | img_url: 'master'}}"/>
+                    <div class="tw-col-span-2 tw-flex tw-flex-col tw-gap-1">
+                        <h3 class="tw-text-2xl tw-text-[#11346F] tw-font-bold">{{card.settings.name}}</h3>
+                        <p class="tw-text-xs tw-text-black">Problem: {{card.settings.problem}}</p>
+                        <div class="tw-flex tw-gap-1">
+                            {%for i in (1..5)%}
+                            <img src="https://cdn.shopify.com/s/files/1/0637/9474/1504/files/Star_1_e3b09e65-0405-4945-aa6f-13f0cf4a0360.svg?v=1652121320"/>
+                            {%endfor%}
+                        </div>
                     </div>
                 </div>
             {%endfor%}

@@ -471,6 +471,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .tw-mt-10 {
   margin-top: 40px;
 }
+.tw-mt-2 {
+  margin-top: 8px;
+}
 .tw-block {
   display: block;
 }
@@ -546,6 +549,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 .tw-gap-20 {
   gap: 80px;
 }
+.tw-gap-1 {
+  gap: 4px;
+}
+.tw-self-center {
+  align-self: center;
+}
 .tw-justify-self-end {
   justify-self: end;
 }
@@ -577,6 +586,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .tw-border-blue-300 {
   --tw-border-opacity: 1;
   border-color: rgb(147 197 253 / var(--tw-border-opacity));
+}
+.tw-border-red-500 {
+  --tw-border-opacity: 1;
+  border-color: rgb(239 68 68 / var(--tw-border-opacity));
+}
+.tw-border-\[\#197AFF\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(25 122 255 / var(--tw-border-opacity));
 }
 .tw-bg-\[\#11346F\] {
   --tw-bg-opacity: 1;
@@ -614,6 +631,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .tw-p-8 {
   padding: 32px;
+}
+.tw-p-4 {
+  padding: 16px;
 }
 .tw-px-5 {
   padding-left: 20px;
@@ -679,6 +699,18 @@ Ensure the default browser behavior of the `hidden` attribute.
 .tw-text-\[1em\] {
   font-size: 1em;
 }
+.tw-text-xl {
+  font-size: 20px;
+}
+.tw-text-2xl {
+  font-size: 24px;
+}
+.tw-text-\[12px\] {
+  font-size: 12px;
+}
+.tw-text-xs {
+  font-size: 12px;
+}
 .tw-font-bold {
   font-weight: 700;
 }
@@ -687,6 +719,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .tw-font-extrabold {
   font-weight: 800;
+}
+.tw-font-semibold {
+  font-weight: 600;
+}
+.tw-font-normal {
+  font-weight: 400;
+}
+.tw-uppercase {
+  text-transform: uppercase;
 }
 .tw-leading-\[1em\] {
   line-height: 1em;
@@ -726,10 +767,24 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-text-opacity: 1;
   color: rgb(79 70 229 / var(--tw-text-opacity));
 }
+.tw-text-\[\#262626\] {
+  --tw-text-opacity: 1;
+  color: rgb(38 38 38 / var(--tw-text-opacity));
+}
+.tw-text-\[\#89C25F\] {
+  --tw-text-opacity: 1;
+  color: rgb(137 194 95 / var(--tw-text-opacity));
+}
 .tw-shadow {
   --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.tw-duration-200 {
+  transition-duration: 200ms;
+}
+.tw-duration-500 {
+  transition-duration: 500ms;
 }
 .after\:tw-rotate-180::after {
   content: var(--tw-content);

@@ -2,7 +2,23 @@
   "sections": {
     "testimonials": {
       "type": "testimonials",
-      "settings": {}
+      "blocks": {
+        "d08d178d-9b70-4b98-b294-bc1228ed3425": {
+          "type": "testimonial",
+          "settings": {
+            "name": "Sofia M.",
+            "problem": "Stress and migraines",
+            "rating": 4,
+            "image": "shopify://shop_images/Ellipse_5.png",
+            "comment": "This is exactly what I was looking for. I’ve been having issues with stress headaches and migraines for over 20 years, and I FINALLY found something that helps. I feel relieved after each session and each of the 4 modes feels amazing.",
+            "change-image": "shopify://shop_images/Rectangle_5_1.png"
+          }
+        }
+      },
+      "block_order": ["d08d178d-9b70-4b98-b294-bc1228ed3425"],
+      "settings": {
+        "title": ""
+      }
     }
   },
   "order": ["testimonials"]
