@@ -1,0 +1,117 @@
+<div class="page-width">
+    <h1 class="tw-text-center">Real Customers <br/><span class="">Real Stories</span></h1>
+    <div
+      style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
+      class="swiper mySwiper2"
+    >
+      <div class="swiper-wrapper">
+        {%for i in (1..5)%}
+        {%for card in section.blocks%}
+            <div class="swiper-slide tw-grid tw-grid-cols-2 tw-gap-20">
+               <div>
+                   <h3>{{card.settings.name}}</h3>
+                   <p>Problem: {{card.settings.problem}}</p>
+                   <p>{{card.settings.comment}}</p>
+               </div>
+               <div>
+                   <img src="{{card.settings.change-image | img_url: "master"}}"/>
+               </div>
+            </div>
+            {%endfor%}
+        {%endfor%}
+      </div>
+      <div class="swiper-button-next custom-nav-btn"></div>
+      <div class="swiper-button-prev custom-nav-btn"></div>
+    </div>
+    <div thumbsSlider="" class="swiper mySwiper tw-mt-10">
+      <div class="swiper-wrapper">
+        {%for i in (1..5)%}
+            {%for card in section.blocks%}
+                <div class="swiper-slide tw-grid tw-grid-cols-3 tw-gap-2 tw-border tw-border-blue-300 tw-p-8 tw-rounded-2xl">
+                    <img src="{{card.settings.image | img_url: 'master'}}"/>
+                    <div class="tw-col-span-2">
+                        <h3>{{card.settings.name}}</h3>
+                        <p>Problem: {{card.settings.problem}}</p>
+                    </div>
+                </div>
+            {%endfor%}
+        {%endfor%}
+      </div>
+    </div>
+</div>
+<style>
+    .custom-nav-btn {
+        background-color: red;
+    }
+</style>
+<script>
+    window.addEventListener("load", () => {
+        var swiper = new Swiper(".mySwiper", {
+      spaceBetween: 20,
+      slidesPerView: 4,
+      freeMode: true,
+      watchSlidesProgress: true,
+    });
+    var swiper2 = new Swiper(".mySwiper2", {
+      spaceBetween: 10,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      thumbs: {
+        swiper: swiper,
+      },
+    });
+    })
+</script>
+
+{% schema %}
+{
+    "name": "testimonials",
+    "settings": [
+        {
+            "id": "title",
+            "type": "text",
+            "label": "Title"
+        }
+    ],
+    "blocks": [
+        {
+            "name": "Testimonial",
+            "type": "testimonial",
+            "settings": [
+                {
+                    "id": "name",
+                    "type": "text",
+                    "label": "Name"
+                },
+                {
+                    "id": "problem",
+                    "type": "text",
+                    "label": "Problem"
+                },
+                {
+                    "id": "rating",
+                    "type": "number",
+                    "label": "Rating"
+                },
+                {
+                    "id": "image",
+                    "type": "image_picker",
+                    "label": "Image"
+                },
+                {
+                    "id": "comment",
+                    "type": "text",
+                    "label": "Comment"
+                },
+                {
+                    "id": "change-image",
+                    "type": "image_picker",
+                    "label": "Change Image" 
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

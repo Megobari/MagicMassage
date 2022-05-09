@@ -433,6 +433,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .tw-z-20 {
   z-index: 20;
 }
+.tw-col-span-2 {
+  grid-column: span 2 / span 2;
+}
 .tw-my-14 {
   margin-top: 56px;
   margin-bottom: 56px;
@@ -464,6 +467,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .tw-ml-3 {
   margin-left: 12px;
+}
+.tw-mt-10 {
+  margin-top: 40px;
 }
 .tw-block {
   display: block;
@@ -504,6 +510,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 .tw-grid-cols-4 {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
+.tw-grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.tw-grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
 .tw-flex-col {
   flex-direction: column;
 }
@@ -528,6 +540,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 .tw-gap-8 {
   gap: 32px;
 }
+.tw-gap-10 {
+  gap: 40px;
+}
+.tw-gap-20 {
+  gap: 80px;
+}
 .tw-justify-self-end {
   justify-self: end;
 }
@@ -543,6 +561,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .tw-rounded-full {
   border-radius: 9999px;
 }
+.tw-rounded-2xl {
+  border-radius: 1rem;
+}
 .tw-border {
   border-width: 1px;
 }
@@ -553,9 +574,13 @@ Ensure the default browser behavior of the `hidden` attribute.
 .tw-border-transparent {
   border-color: transparent;
 }
-.tw-bg-blue-900 {
+.tw-border-blue-300 {
+  --tw-border-opacity: 1;
+  border-color: rgb(147 197 253 / var(--tw-border-opacity));
+}
+.tw-bg-\[\#11346F\] {
   --tw-bg-opacity: 1;
-  background-color: rgb(30 58 138 / var(--tw-bg-opacity));
+  background-color: rgb(17 52 111 / var(--tw-bg-opacity));
 }
 .tw-bg-white {
   --tw-bg-opacity: 1;
@@ -577,16 +602,18 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(25 122 255 / var(--tw-bg-opacity));
 }
-.tw-bg-\[\#11346F\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(17 52 111 / var(--tw-bg-opacity));
-}
 .tw-bg-opacity-10 {
   --tw-bg-opacity: 0.1;
 }
 .tw-object-contain {
   -o-object-fit: contain;
      object-fit: contain;
+}
+.tw-p-5 {
+  padding: 20px;
+}
+.tw-p-8 {
+  padding: 32px;
 }
 .tw-px-5 {
   padding-left: 20px;
@@ -649,12 +676,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .tw-text-base {
   font-size: 16px;
 }
-.tw-text-\[20px\] {
-  font-size: 20px;
-}
-.tw-text-\[10px\] {
-  font-size: 10px;
-}
 .tw-text-\[1em\] {
   font-size: 1em;
 }
@@ -681,6 +702,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-text-opacity: 1;
   color: rgb(30 58 138 / var(--tw-text-opacity));
 }
+.tw-text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
 .tw-text-\[\#11346f\] {
   --tw-text-opacity: 1;
   color: rgb(17 52 111 / var(--tw-text-opacity));
@@ -688,10 +713,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .tw-text-\[\#197AFF\] {
   --tw-text-opacity: 1;
   color: rgb(25 122 255 / var(--tw-text-opacity));
-}
-.tw-text-black {
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 .tw-text-\[\#11346F\] {
   --tw-text-opacity: 1;
@@ -704,9 +725,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .tw-text-indigo-600 {
   --tw-text-opacity: 1;
   color: rgb(79 70 229 / var(--tw-text-opacity));
-}
-.tw-opacity-60 {
-  opacity: 0.6;
 }
 .tw-shadow {
   --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
@@ -770,11 +788,6 @@ Ensure the default browser behavior of the `hidden` attribute.
     border-right-width: 1px;
   }
 
-  .md\:tw-py-10 {
-    padding-top: 40px;
-    padding-bottom: 40px;
-  }
-
   .md\:tw-py-\[10\%\] {
     padding-top: 10%;
     padding-bottom: 10%;
@@ -790,18 +803,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .md\:tw-text-lg {
     font-size: 18px;
-  }
-
-  .md\:tw-text-\[20px\] {
-    font-size: 20px;
-  }
-
-  .md\:tw-text-\[2em\] {
-    font-size: 2em;
-  }
-
-  .md\:tw-text-\[1\.5em\] {
-    font-size: 1.5em;
   }
 
   .md\:tw-text-\[1\.2em\] {
@@ -911,12 +912,5 @@ Ensure the default browser behavior of the `hidden` attribute.
     --tw-scale-x: 1;
     --tw-scale-y: 1;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  }
-}
-@media (min-width: 1441px) {
-
-  .xxl\:tw-py-\[10\%\] {
-    padding-top: 10%;
-    padding-bottom: 10%;
   }
 }

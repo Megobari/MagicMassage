@@ -1,57 +1,9 @@
 {
   "sections": {
-    "product": {
-      "type": "home-product",
-      "blocks": {
-        "7a6c6855-db31-44b3-9b9f-74392ccda3f4": {
-          "type": "advantages",
-          "settings": {
-            "icon": "shopify://shop_images/Group_4400-min.png",
-            "title": "Head Massage",
-            "content": "• Reduce stress & anxiety <br>• Strengthen hair roots"
-          }
-        },
-        "ee5d0a29-06a8-43fc-839e-1a4ed07748eb": {
-          "type": "advantages",
-          "settings": {
-            "icon": "shopify://shop_images/Group_4401-min.png",
-            "title": "Full-Body Massage",
-            "content": "• Perfect muscle recovery<br> • Improved circulation"
-          }
-        },
-        "0e5bac8d-4cb1-4a41-9c87-3a083cdacb29": {
-          "type": "advantages",
-          "settings": {
-            "icon": "shopify://shop_images/Group_4402-min.png",
-            "title": "Kid Massage",
-            "content": "• Promote growth<br> • Ehanced sleep quality"
-          }
-        },
-        "f7dd178f-4416-4b97-af2a-02ad04a80d3e": {
-          "type": "advantages",
-          "settings": {
-            "icon": "shopify://shop_images/Group_4403-min.png",
-            "title": "Pet Massage",
-            "content": "• Boosted immunity <br>• Lifetime of comfort"
-          }
-        }
-      },
-      "block_order": [
-        "7a6c6855-db31-44b3-9b9f-74392ccda3f4",
-        "ee5d0a29-06a8-43fc-839e-1a4ed07748eb",
-        "0e5bac8d-4cb1-4a41-9c87-3a083cdacb29",
-        "f7dd178f-4416-4b97-af2a-02ad04a80d3e"
-      ],
-      "settings": {
-        "title": "All-in-one massager that works like magic!",
-        "desc": "MagicMassage™ provides relief from head tensions, muscle aches, sleep irregularities and more - suitable for adults, kids, and pets!",
-        "img": "shopify://shop_images/Group_4404-min.png"
-      }
-    },
-    "features-sticky": {
-      "type": "features-sticky",
+    "testimonials": {
+      "type": "testimonials",
       "settings": {}
     }
   },
-  "order": ["product", "features-sticky"]
+  "order": ["testimonials"]
 }
