@@ -3,6 +3,7 @@
     <div
       style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
       class="swiper mySwiper2 tw-mt-5"
+      id="mySwiper2"
     >
       <div class="swiper-wrapper">
         {%for i in (1..5)%}
@@ -26,14 +27,18 @@
             {%endfor%}
         {%endfor%}
       </div>
-      <div class="swiper-button-next custom-nav-btn"></div>
-      <div class="swiper-button-prev custom-nav-btn"></div>
+      <!-- <div class="swiper-button-next custom-nav-btn"></div>
+      <div class="swiper-button-prev custom-nav-btn"></div> -->
     </div>
-    <div thumbsSlider="" class="swiper mySwiper tw-mt-10">
+    <div 
+        thumbsSlider="" 
+        class="swiper mySwiper tw-mt-10" 
+        id="mySwiper"
+    >
       <div class="swiper-wrapper" x-data="{showIndex: 1}">
         {%for i in (1..5)%}
             {%for card in section.blocks%}
-                <div @click="showIndex = {{i}}" :class="{'tw-border-[#197AFF]': showIndex == {{i}}}" class="swiper-slide tw-grid tw-grid-cols-3 tw-gap-2 tw-border tw-border-blue-300 tw-p-4 tw-rounded-2xl">
+                <div @click="showIndex = {{i}}" :class="{'active': showIndex == {{i}}}" class="swiper-slide swiperSmall-slide tw-grid tw-grid-cols-3 tw-gap-2 tw-border tw-border-blue-300 tw-p-4 tw-rounded-2xl">
                     <img class="tw-self-center" src="{{card.settings.image | img_url: 'master'}}"/>
                     <div class="tw-col-span-2 tw-flex tw-flex-col tw-gap-1">
                         <h3 class="tw-text-2xl tw-text-[#11346F] tw-font-bold">{{card.settings.name}}</h3>
@@ -51,28 +56,38 @@
     </div>
 </div>
 <style>
-    .custom-nav-btn {
-        background-color: red;
+    .swiperSmall-slide.active {
+        border: 1px solid #197AFF;
     }
 </style>
 <script>
     window.addEventListener("load", () => {
         var swiper = new Swiper(".mySwiper", {
-      spaceBetween: 20,
-      slidesPerView: 4,
-      freeMode: true,
-      watchSlidesProgress: true,
-    });
-    var swiper2 = new Swiper(".mySwiper2", {
-      spaceBetween: 10,
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-      thumbs: {
-        swiper: swiper,
-      },
-    });
+            spaceBetween: 20,
+            slidesPerView: 4,
+            freeMode: true,
+            watchSlidesProgress: true,
+        });
+        var swiper2 = new Swiper(".mySwiper2", {
+            spaceBetween: 10,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            thumbs: {
+                swiper: swiper,
+            },
+        });
+
+        const swiper2Slides = document.querySelectorAll(".swiperSmall-slide");
+
+        swiper2.on("slideChange", () => {
+            swiper2Slides.forEach((item) => {
+                item.classList.contains("active") && item.classList.remove("active");
+            })
+            swiper2Slides[swiper2.realIndex].classList.add("active");
+        })
+
     })
 </script>
 

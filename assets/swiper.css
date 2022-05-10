@@ -225,6 +225,12 @@
   text-transform: none;
   font-variant: initial;
   line-height: 1;
+  color: #197AFF;
+  font-size: 1em;
+  border: 1px solid #197AFF;
+  padding: 1em;
+  border-radius: 99999999px;
+  padding: 0.7em 1em;
 }
 .swiper-button-prev,
 .swiper-rtl .swiper-button-next {
