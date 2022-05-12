@@ -1,0 +1,15 @@
+<span class="tw-font-bold tw-text-[#197AFF] magic-span tw-pb-4 tw-pl-3 md:tw-pl-0">
+    {{text}}
+</span>
+
+{% style %}
+.magic-span {
+    position: relative;
+}
+.magic-span:before {
+    content: url('{{svgURL}}');
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+{% endstyle %}

@@ -1,38 +1,44 @@
 <div class="page-width">
-    <h1 class="tw-text-center tw-text-[#11346F]">Real Customers <br/><span class="tw-font-bold tw-text-[#197AFF]">Real Stories</span></h1>
+    <h1 class="tw-text-center tw-text-[#11346F] tw-text-[32px] md:tw-text-[37px]" style="font-family: var(--font-body)">Real Customers <br/>
+        <!-- <span class="tw-font-bold tw-text-[#197AFF] magic-span">Real Stories</span> -->
+        {%render "magic-span", text: "Real Stories", svgURL: "https://cdn.shopify.com/s/files/1/0637/9474/1504/files/Vector_198_Stroke_ce4ddf27-49a3-4a56-90bd-53d67ca54bab.svg?v=1652350830"%}
+    </h1>
     <div
       style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
       class="swiper mySwiper2 tw-mt-5"
       id="mySwiper2"
     >
-      <div class="swiper-wrapper">
+      <div class="swiper-wrapper tw-pt-4 tw-pb-12 md:tw-pb-0">
         {%for i in (1..5)%}
         {%for card in section.blocks%}
-            <div class="swiper-slide tw-grid tw-grid-cols-2 tw-gap-20">
+            <div class="swiper-slide tw-grid tw-grid-cols-1 md:tw-grid-cols-2 tw-gap-x-20 tw-gap-y-6">
                <div class="tw-self-center">
-                   <h3 class="tw-text-2xl tw-text-[#11346F] tw-font-bold tw-flex tw-gap-2">
-                       {{card.settings.name}}
-                       <span class="tw-text-[12px] tw-font-normal tw-uppercase tw-text-[#89C25F] tw-flex tw-items-center">
-                           <img src="https://cdn.shopify.com/s/files/1/0637/9474/1504/files/Vector.svg?v=1652120761"/>
-                           Verified buyer
+                   <div class="tw-flex tw-gap-5">
+                        <h3 class="tw-text-[26px] tw-text-[#11346F] tw-font-bold">
+                            {{card.settings.name}}
+                        </h3>
+                        <span class="tw-text-[12px] tw-font-normal tw-uppercase tw-text-[#89C25F] tw-flex tw-items-center tw-gap-1">
+                            <img src="https://cdn.shopify.com/s/files/1/0637/9474/1504/files/Vector.svg?v=1652120761"/>
+                            Verified buyer
                         </span>
-                    </h3>
-                   <p class="tw-text-black">Problem: {{card.settings.problem}}</p>
-                   <p class="tw-mt-5">{{card.settings.comment}}</p>
+                     </div>
+                   <p class="tw-text-black tw-mt-2 md:tw-mt-0">Problem: {{card.settings.problem}}</p>
+                   <p class="tw-mt-5 tw-text-black">{{card.settings.comment}}</p>
                </div>
-               <div>
+               <div class="tw-flex tw-items-center tw-justify-center tw-row-start-1 md:tw-col-start-2">
                    <img src="{{card.settings.change-image | img_url: "master"}}"/>
                </div>
             </div>
             {%endfor%}
         {%endfor%}
       </div>
+      <div class="swiper-pagination tw-block md:tw-hidden"></div>
       <!-- <div class="swiper-button-next custom-nav-btn"></div>
       <div class="swiper-button-prev custom-nav-btn"></div> -->
     </div>
     <div 
         thumbsSlider="" 
-        class="swiper mySwiper tw-mt-10" 
+        class="swiper mySwiper tw-mt-10 tw-hidden md:tw-block" 
         id="mySwiper"
     >
       <div class="swiper-wrapper" x-data="{showIndex: 1}">
@@ -41,11 +47,14 @@
                 <div @click="showIndex = {{i}}" :class="{'active': showIndex == {{i}}}" class="swiper-slide swiperSmall-slide tw-grid tw-grid-cols-3 tw-gap-2 tw-border tw-border-blue-300 tw-p-4 tw-rounded-2xl">
                     <img class="tw-self-center" src="{{card.settings.image | img_url: 'master'}}"/>
                     <div class="tw-col-span-2 tw-flex tw-flex-col tw-gap-1">
-                        <h3 class="tw-text-2xl tw-text-[#11346F] tw-font-bold">{{card.settings.name}}</h3>
+                        <h3 class="tw-text-[20px] tw-text-[#11346F] tw-font-bold">{{card.settings.name}}</h3>
                         <p class="tw-text-xs tw-text-black">Problem: {{card.settings.problem}}</p>
                         <div class="tw-flex tw-gap-1">
-                            {%for i in (1..5)%}
+                            {%for i in (1..card.settings.rating)%}
                             <img src="https://cdn.shopify.com/s/files/1/0637/9474/1504/files/Star_1_e3b09e65-0405-4945-aa6f-13f0cf4a0360.svg?v=1652121320"/>
+                            {%endfor%}
+                            {%for i in (card.settings.rating..4)%}
+                            <img src="https://cdn.shopify.com/s/files/1/0637/9474/1504/files/Star_6.svg?v=1652346161"/>
                             {%endfor%}
                         </div>
                     </div>
@@ -58,6 +67,9 @@
 <style>
     .swiperSmall-slide.active {
         border: 1px solid #197AFF;
+    }
+    .swiper-pagination {
+        bottom: -6px !important;
     }
 </style>
 <script>
@@ -73,6 +85,9 @@
             navigation: {
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev",
+            },
+            pagination: {
+              el: ".swiper-pagination",
             },
             thumbs: {
                 swiper: swiper,
