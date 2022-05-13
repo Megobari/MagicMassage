@@ -1,15 +1,22 @@
-<span class="tw-font-bold tw-text-[#197AFF] magic-span tw-pb-4 tw-pl-3 md:tw-pl-0">
+<span class="tw-font-bold tw-text-[#197AFF] magic-span {{customClass}} tw-pb-4 tw-pl-3 md:tw-pl-0">
     {{text}}
 </span>
 
 {% style %}
-.magic-span {
+
+.{{customClass}} {
     position: relative;
 }
-.magic-span:before {
+.{{customClass}}:before {
     content: url('{{svgURL}}');
     position: absolute;
     bottom: 0;
-    left: 0;
+    left: {%if marginLeft == true %}-0.5em{%else%}0{%endif%};
+}
+@media (max-width: 768px){
+    .{{customClass}}:before {
+        content: url("{%if smolSVG %}{{smolSVG}}{%else%}{{svgURL}}{%endif%}");
+        left: {%if marginLeft == true %}-0.1em{%else%}0{%endif%};
+    }
 }
 {% endstyle %}

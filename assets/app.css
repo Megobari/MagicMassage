@@ -436,11 +436,8 @@ Ensure the default browser behavior of the `hidden` attribute.
 .tw-col-span-2 {
   grid-column: span 2 / span 2;
 }
-.tw-col-start-1 {
-  grid-column-start: 1;
-}
-.tw-col-start-2 {
-  grid-column-start: 2;
+.tw-col-span-3 {
+  grid-column: span 3 / span 3;
 }
 .tw-row-start-1 {
   grid-row-start: 1;
@@ -465,6 +462,24 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-left: auto;
   margin-right: auto;
 }
+.tw-my-\[73px\] {
+  margin-top: 73px;
+  margin-bottom: 73px;
+}
+.tw-mx-\[2px\] {
+  margin-left: 2px;
+  margin-right: 2px;
+}
+.tw-mx-\[4px\] {
+  margin-left: 4px;
+  margin-right: 4px;
+}
+.\!tw-mt-10 {
+  margin-top: 40px !important;
+}
+.tw-mt-4 {
+  margin-top: 16px;
+}
 .tw-mt-5 {
   margin-top: 20px;
 }
@@ -477,11 +492,23 @@ Ensure the default browser behavior of the `hidden` attribute.
 .tw-ml-3 {
   margin-left: 12px;
 }
+.tw-mt-2 {
+  margin-top: 8px;
+}
 .tw-mt-10 {
   margin-top: 40px;
 }
-.tw-mt-2 {
-  margin-top: 8px;
+.tw-mt-16 {
+  margin-top: 64px;
+}
+.tw-mt-\[73px\] {
+  margin-top: 73px;
+}
+.tw-mb-\[50px\] {
+  margin-bottom: 50px;
+}
+.tw-mt-\[60px\] {
+  margin-top: 60px;
 }
 .tw-block {
   display: block;
@@ -516,20 +543,26 @@ Ensure the default browser behavior of the `hidden` attribute.
 .tw-flex-1 {
   flex: 1 1 0%;
 }
+.tw-grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
 .tw-grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 .tw-grid-cols-4 {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
-.tw-grid-cols-2 {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
 .tw-grid-cols-3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
+.tw-grid-cols-5 {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
 .tw-flex-col {
   flex-direction: column;
+}
+.tw-flex-wrap {
+  flex-wrap: wrap;
 }
 .tw-items-end {
   align-items: flex-end;
@@ -539,6 +572,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .tw-justify-center {
   justify-content: center;
+}
+.tw-justify-between {
+  justify-content: space-between;
+}
+.tw-justify-around {
+  justify-content: space-around;
+}
+.tw-justify-evenly {
+  justify-content: space-evenly;
 }
 .tw-gap-9 {
   gap: 36px;
@@ -552,21 +594,24 @@ Ensure the default browser behavior of the `hidden` attribute.
 .tw-gap-8 {
   gap: 32px;
 }
-.tw-gap-20 {
-  gap: 80px;
-}
 .tw-gap-5 {
   gap: 20px;
 }
 .tw-gap-1 {
   gap: 4px;
 }
+.tw-gap-6 {
+  gap: 24px;
+}
+.tw-gap-3 {
+  gap: 12px;
+}
+.tw-gap-10 {
+  gap: 40px;
+}
 .tw-gap-x-20 {
   -moz-column-gap: 80px;
        column-gap: 80px;
-}
-.tw-gap-y-4 {
-  row-gap: 16px;
 }
 .tw-gap-y-6 {
   row-gap: 24px;
@@ -630,6 +675,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(25 122 255 / var(--tw-bg-opacity));
 }
+.tw-bg-red-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
+}
+.tw-bg-\[\#F6F8FC\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(246 248 252 / var(--tw-bg-opacity));
+}
 .tw-bg-opacity-10 {
   --tw-bg-opacity: 0.1;
 }
@@ -640,8 +693,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .tw-p-4 {
   padding: 16px;
 }
-.tw-p-\[0\.5em\] {
-  padding: 0.5em;
+.tw-p-2 {
+  padding: 8px;
+}
+.tw-p-3 {
+  padding: 12px;
 }
 .tw-px-5 {
   padding-left: 20px;
@@ -683,39 +739,21 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-top: 8px;
   padding-bottom: 8px;
 }
-.tw-py-4 {
-  padding-top: 16px;
-  padding-bottom: 16px;
-}
-.tw-pb-8 {
+.tw-py-8 {
+  padding-top: 32px;
   padding-bottom: 32px;
 }
-.tw-pb-10 {
-  padding-bottom: 40px;
+.tw-pt-4 {
+  padding-top: 16px;
 }
 .tw-pb-12 {
   padding-bottom: 48px;
 }
-.tw-pb-2 {
-  padding-bottom: 8px;
-}
-.tw-pb-3 {
-  padding-bottom: 12px;
-}
 .tw-pb-4 {
   padding-bottom: 16px;
 }
-.tw-pl-2 {
-  padding-left: 8px;
-}
-.tw-pl-4 {
-  padding-left: 16px;
-}
 .tw-pl-3 {
   padding-left: 12px;
-}
-.tw-pt-4 {
-  padding-top: 16px;
 }
 .tw-text-center {
   text-align: center;
@@ -738,6 +776,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .tw-text-base {
   font-size: 16px;
 }
+.tw-text-\[32px\] {
+  font-size: 32px;
+}
 .tw-text-\[26px\] {
   font-size: 26px;
 }
@@ -752,12 +793,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .tw-text-\[1em\] {
   font-size: 1em;
-}
-.tw-text-\[37px\] {
-  font-size: 37px;
-}
-.tw-text-\[32px\] {
-  font-size: 32px;
 }
 .tw-font-bold {
   font-weight: 700;
@@ -866,10 +901,6 @@ Ensure the default browser behavior of the `hidden` attribute.
     grid-column-start: 2;
   }
 
-  .md\:tw-row-start-2 {
-    grid-row-start: 2;
-  }
-
   .md\:tw-mt-0 {
     margin-top: 0;
   }
@@ -890,20 +921,32 @@ Ensure the default browser behavior of the `hidden` attribute.
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .md\:tw-grid-cols-5 {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .md\:tw-flex-row {
+    flex-direction: row;
+  }
+
+  .md\:tw-items-start {
+    align-items: flex-start;
+  }
+
+  .md\:tw-justify-start {
+    justify-content: flex-start;
+  }
+
+  .md\:tw-gap-10 {
+    gap: 40px;
+  }
+
   .md\:tw-border {
     border-width: 1px;
   }
 
   .md\:tw-border-r {
     border-right-width: 1px;
-  }
-
-  .md\:tw-p-0 {
-    padding: 0;
-  }
-
-  .md\:tw-p-2 {
-    padding: 8px;
   }
 
   .md\:tw-py-\[10\%\] {
@@ -931,12 +974,12 @@ Ensure the default browser behavior of the `hidden` attribute.
     font-size: 18px;
   }
 
-  .md\:tw-text-\[1\.2em\] {
-    font-size: 1.2em;
-  }
-
   .md\:tw-text-\[37px\] {
     font-size: 37px;
+  }
+
+  .md\:tw-text-\[1\.2em\] {
+    font-size: 1.2em;
   }
 }
 @media (min-width: 990px) {

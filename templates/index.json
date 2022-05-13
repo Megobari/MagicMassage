@@ -19,7 +19,11 @@
       "settings": {
         "title": ""
       }
+    },
+    "whats-included": {
+      "type": "custom-text-with-image",
+      "settings": {}
     }
   },
-  "order": ["testimonials"]
+  "order": ["testimonials", "whats-included"]
 }

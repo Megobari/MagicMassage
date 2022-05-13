@@ -1,0 +1,81 @@
+<div class="page-width !tw-mt-10 tw-grid tw-grid-cols-1 md:tw-grid-cols-5">
+    <div class="tw-col-span-3 tw-flex tw-flex-col tw-items-center md:tw-items-start">
+        <img class="tw-block md:tw-hidden" src="https://cdn.shopify.com/s/files/1/0637/9474/1504/files/2_1.png?v=1652449493"/>
+        <h1 class="tw-text-center md:tw-text-left">
+            {{section.settings.title}}
+            {%render "magic-span",
+                text: {{section.settings.magic-title}},
+                svgURL:"https://cdn.shopify.com/s/files/1/0637/9474/1504/files/Vector_198_Stroke_ce4ddf27-49a3-4a56-90bd-53d67ca54bab.svg?v=1652350830",
+                smolSVG: "https://cdn.shopify.com/s/files/1/0637/9474/1504/files/Vector_198_Stroke.svg?v=1651490027",
+                customClass: "magic-span2",
+                marginLeft: true
+            %}
+        </h1>
+        <p class="tw-mt-8 tw-text-center md:tw-text-left">{{section.settings.desc}}</p>
+        <div class="tw-flex tw-gap-6 tw-justify-between md:tw-gap-10 tw-mt-[60px] tw-mb-[50px] tw-mx-[4px] tw-flex-wrap">
+            {%for item in section.blocks%}
+            <div class="tw-flex tw-gap-3 tw-items-center tw-flex-col tw-text-center md:tw-text-left md:tw-flex-row">
+                <img class="tw-bg-[#F6F8FC] tw-rounded-full tw-p-3" src="{{item.settings.icon | img_url: "master"}}"/>
+                <h3 class="tw-text-[16px] tw-text-black">{{item.settings.title}}</h3>
+            </div>
+            {%endfor%}
+        </div>
+        <div>
+            {%render "custom-button"%}
+        </div>
+    </div>
+    <div class="tw-col-span-2 tw-justify-self-end tw-hidden md:tw-block">
+        <img src="{{section.settings.image | img_url: 'master'}}"/>
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": "Custom text with image",
+    "settings": [
+        {
+            "id": "title",
+            "type": "text",
+            "label": "Title"
+        },
+        {
+            "id": "magic-title",
+            "type": "text",
+            "label": "Magic Title part"
+        },
+        {
+            "id": "desc",
+            "type": "text",
+            "label": "Description"
+        },
+        {
+            "id": "show-blocks",
+            "type": "checkbox",
+            "label": "Show Blocks"
+        },
+        {
+            "id": "image",
+            "type": "image_picker",
+            "label": "Image"
+        }
+    ],
+    "blocks": [
+        {
+            "name": "List",
+            "type": "list",
+            "settings": [
+                {
+                    "id": "icon",
+                    "type": "image_picker",
+                    "label": "Icon"
+                },
+                {
+                    "id": "title",
+                    "type": "text",
+                    "label": "Title"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}
