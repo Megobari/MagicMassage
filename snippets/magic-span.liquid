@@ -1,4 +1,4 @@
-<span class="tw-font-bold tw-text-[#197AFF] magic-span {{customClass}} tw-pb-4 tw-pl-3 md:tw-pl-0">
+<span class="tw-font-bold tw-text-[#197AFF] magic-span {{customClass}} tw-pb-4 tw-pl-3 md:tw-pl-0 tw-text-[37px]">
     {{text}}
 </span>
 
@@ -7,10 +7,11 @@
 .{{customClass}} {
     position: relative;
 }
+
 .{{customClass}}:before {
     content: url('{{svgURL}}');
     position: absolute;
-    bottom: 0;
+    bottom: {%if bottomMargin %}-0.3em{%else%}0{%endif%};
     left: {%if marginLeft == true %}-0.5em{%else%}0{%endif%};
 }
 @media (max-width: 768px){

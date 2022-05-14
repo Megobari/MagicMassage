@@ -1,5 +1,67 @@
 {
   "sections": {
+    "reason-table": {
+      "type": "reason-table",
+      "blocks": {
+        "a884d6ed-bd4d-4848-8ed5-e7f186d7e5c6": {
+          "type": "reason",
+          "settings": {
+            "reason": "Comfortable To Use",
+            "magic": true,
+            "other": false
+          }
+        },
+        "b4bd16fc-dd05-40a5-ab53-fcba2f30a892": {
+          "type": "reason",
+          "settings": {
+            "reason": "Can Be Used For Full Body",
+            "magic": true,
+            "other": false
+          }
+        },
+        "43c3416a-0e94-497b-9d6b-b15477139c99": {
+          "type": "reason",
+          "settings": {
+            "reason": "Do Not Tangle Hair",
+            "magic": true,
+            "other": true
+          }
+        },
+        "4198e2db-8f22-4fa1-84bf-4d8553064ce1": {
+          "type": "reason",
+          "settings": {
+            "reason": "Long Lasting Battery",
+            "magic": true,
+            "other": false
+          }
+        },
+        "d7d08ca3-8c16-4d3f-9bcc-cefa11bfe9ce": {
+          "type": "reason",
+          "settings": {
+            "reason": "Powerful Penetration Technology",
+            "magic": true,
+            "other": false
+          }
+        },
+        "50581094-e526-42eb-95c3-efd8a25bb254": {
+          "type": "reason",
+          "settings": {
+            "reason": "Gentle and non-irritating to the skin",
+            "magic": true,
+            "other": false
+          }
+        }
+      },
+      "block_order": [
+        "a884d6ed-bd4d-4848-8ed5-e7f186d7e5c6",
+        "b4bd16fc-dd05-40a5-ab53-fcba2f30a892",
+        "43c3416a-0e94-497b-9d6b-b15477139c99",
+        "4198e2db-8f22-4fa1-84bf-4d8553064ce1",
+        "d7d08ca3-8c16-4d3f-9bcc-cefa11bfe9ce",
+        "50581094-e526-42eb-95c3-efd8a25bb254"
+      ],
+      "settings": {}
+    },
     "testimonials": {
       "type": "testimonials",
       "blocks": {
@@ -22,8 +84,42 @@
     },
     "whats-included": {
       "type": "custom-text-with-image",
-      "settings": {}
+      "blocks": {
+        "a6a3a6b5-f6a5-449a-9302-7b69b8491f61": {
+          "type": "list",
+          "settings": {
+            "icon": "shopify://shop_images/image_58_1.png",
+            "title": "1x Portable <br>MagicMassage"
+          }
+        },
+        "55938bd2-8809-41ce-980e-2ae4b4609702": {
+          "type": "list",
+          "settings": {
+            "icon": "shopify://shop_images/image_58_1.png",
+            "title": "1x USB<br> Cable"
+          }
+        },
+        "788f8082-90e6-453b-9c45-dea87d4c83c8": {
+          "type": "list",
+          "settings": {
+            "icon": "shopify://shop_images/image_58_1.png",
+            "title": "1x User<br> Manual"
+          }
+        }
+      },
+      "block_order": [
+        "a6a3a6b5-f6a5-449a-9302-7b69b8491f61",
+        "55938bd2-8809-41ce-980e-2ae4b4609702",
+        "788f8082-90e6-453b-9c45-dea87d4c83c8"
+      ],
+      "settings": {
+        "title": "What's",
+        "magic-title": "Included",
+        "desc": "The package will include the  MagicMassage™, USB cable, Silicon Nodes, user manual,              a thank you card AND a discount voucher for a future purchase. Once it arrives,              all you need to do is open the box and push the button to turn it on.",
+        "show-blocks": true,
+        "image": "shopify://shop_images/minimum.png"
+      }
     }
   },
-  "order": ["testimonials", "whats-included"]
+  "order": ["reason-table", "testimonials", "whats-included"]
 }

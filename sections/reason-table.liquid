@@ -1,0 +1,146 @@
+<div class="tw-bg-[#F6F8FC] tw-my-10 tw-py-10">
+  <div class="page-width tw-grid tw-grid-cols-7 custom-table">
+    <div class="column tw-col-span-3 tw-rounded-tl-3xl tw-rounded-bl-3xl tw-text-black">
+      <div class="row head !tw-items-start">
+        <div class="tw-hidden md:tw-block">
+          <h1 class="tw-text-[37px]">Why choose</h1>
+          {%render "magic-span", 
+            text: "MagicMassage™", 
+            customClass: "magic-span3",
+            svgURL: "https://cdn.shopify.com/s/files/1/0637/9474/1504/files/Vector_198_Stroke_ccfa00e2-e624-4f98-9e3f-24585bf252ac.svg?v=1652552341" 
+            bottomMargin: true
+          %}
+          </div>
+      </div>
+      {%for reason in section.blocks%}
+      <div class="row tw-text-[12px] md:tw-text-[16px]">{{reason.settings.reason}}</div>
+      {%endfor%}
+    </div>
+    <div class="column magic-massage tw-col-span-2">
+      <div class="row head">
+          <img class="!tw-max-w-[48px]" src="https://cdn.shopify.com/s/files/1/0637/9474/1504/files/min.png?v=1652452009"/>
+          <h3 class="tw-text-[12px] md:tw-text-[20px]">MagicMassage™</h3>
+      </div>
+      {%for reason in section.blocks %}
+        <div class="row">
+            <img src="{%if reason.settings.magic %}https://cdn.shopify.com/s/files/1/0637/9474/1504/files/tick-circle.svg?v=1652458734{%else%}https://cdn.shopify.com/s/files/1/0637/9474/1504/files/close-circle.svg?v=1652458734{%endif%}"/>
+        </div>
+      {%endfor%}
+    </div>
+    <div class="column other tw-col-span-2 tw-rounded-tr-3xl tw-rounded-br-3xl">
+      <div class="row head">
+          <img class="!tw-max-w-[48px]" src="https://cdn.shopify.com/s/files/1/0637/9474/1504/files/image_100_1.png?v=1652452181"/>
+          <h3 class="tw-text-[12px] md:tw-text-[20px]">Other</h3>
+      </div>
+      {%for reason in section.blocks %}
+        <div class="row">
+            <img src="{%if reason.settings.other %}https://cdn.shopify.com/s/files/1/0637/9474/1504/files/tick-circle.svg?v=1652458734{%else%}https://cdn.shopify.com/s/files/1/0637/9474/1504/files/close-circle.svg?v=1652458734{%endif%}"/>
+        </div>
+      {%endfor%}
+    </div>
+  </div>
+</div>
+
+<style>
+  .custom-table .column {
+    background-color: white;
+  }
+
+  .custom-table .row.head {
+    padding: 2em 3em;
+    height: 10em;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .custom-table .row.head img {
+      max-width: 6em;
+  }
+
+  .custom-table .row {
+    height: 4em;
+    padding: 1em 3em;
+    display: flex;
+    align-items: center;
+  }
+
+  .custom-table .row:not(:last-child) {
+    border-bottom: 1px solid #aeccff;
+  }
+
+  .custom-table .magic-massage {
+    background: linear-gradient(180deg, #ebf1ff 0%, #ffffff 100%);
+  }
+  .custom-table .other .row,
+  .custom-table .magic-massage .row {
+    justify-content: center;
+  }
+
+  @media (max-width: 769px) {
+
+    .custom-table .column, .custom-table .magic-massage, .custom-table .other {
+      border: 1px solid #AECCFF;
+    }
+
+    .custom-table .column:first-of-type {
+      border-right: 0;
+    }
+
+    .custom-table .magic-massage {
+      border-left: 0;
+      border-right: 0;
+    }
+
+    .custom-table .other {
+      border-left: 0;
+    }
+
+    .custom-table .row.head {
+      padding: 0;
+      height: 5em;
+      display: flex;
+      flex-direction: column;
+    }
+    .custom-table .other .row:not(:first-of-type),
+    .custom-table .magic-massage .row:not(:first-of-type) {
+      height: 3.2em;
+    }
+    .custom-table .magic-massage {
+      background: white;
+    }
+    .custom-table .row {
+      padding: 1em;
+    }
+  }
+
+</style>
+
+{% schema %}
+{
+    "name": "Why Choose MagicMassage",
+    "settings": [],
+    "blocks": [
+        {
+            "name": "Reason",
+            "type": "reason",
+            "settings": [
+                {
+                    "id": "reason",
+                    "type": "text",
+                    "label": "Reason"
+                },
+                {
+                    "id": "magic",
+                    "type": "checkbox",
+                    "label": "Magic"
+                },
+                {
+                    "id": "other",
+                    "type": "checkbox",
+                    "label": "Other"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}
