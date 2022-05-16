@@ -17,7 +17,11 @@
 @media (max-width: 768px){
     .{{customClass}}:before {
         content: url("{%if smolSVG %}{{smolSVG}}{%else%}{{svgURL}}{%endif%}");
-        left: {%if marginLeft == true %}-0.1em{%else%}0{%endif%};
+        left: {%if marginLeft == true %}-0.4em{%else%}0{%endif%};
+    }
+    .{{customClass}} {
+        font-size: 30px;
+        padding-left: 0
     }
 }
 {% endstyle %}

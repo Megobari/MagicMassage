@@ -83,7 +83,7 @@
       }
     },
     "whats-included": {
-      "type": "custom-text-with-image",
+      "type": "custom-included",
       "blocks": {
         "a6a3a6b5-f6a5-449a-9302-7b69b8491f61": {
           "type": "list",

@@ -59,8 +59,8 @@
 
       @font-face {
         font-family: 'Mont';
-        src: url('{{'Mont-Semibold.woff2' | asset_url}}') format('woff2'),
-            url('{{'Mont-Semibold.woff' | asset_url}}') format('woff');
+        src: url('{{'Mont-SemiBold.woff2' | asset_url}}') format('woff2'),
+            url('{{'Mont-SemiBold.woff' | asset_url}}') format('woff');
         font-weight: 600;
         font-style: normal;
         font-display: swap;
@@ -196,7 +196,7 @@
         height: 100%;
       }
       body * {
-        font-family: var(--font-body);
+        font-family: var(--font-body) !important;
       }
       body > * {
         font-family: var(--font-body);
